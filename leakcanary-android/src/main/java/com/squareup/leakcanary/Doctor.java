@@ -26,7 +26,7 @@ public class Doctor {
     this.zombieMatchers = zombieMatchers;
     this.excludedRefs = excludedRefs;
     setEnabled(context, listenerServiceClass, true);
-    setEnabled(context, Autopsy.class, true);
+    setEnabled(context, AutopsyService.class, true);
   }
 
   public void performDiagnostic() {

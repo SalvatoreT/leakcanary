@@ -9,7 +9,7 @@ public class ZombieException extends RuntimeException {
       return new RuntimeException("No zombie");
     }
     ZombieException cause = null;
-    for (int i = Math.min(MAX_TRACES, autopsy.leakTraces.size()) - 1; i >= 0; ) {
+    for (int i = Math.min(MAX_TRACES, autopsy.leakTraces.size()) - 1; i >= 0; i--) {
       cause = new ZombieException(autopsy.leakTraces.get(i), cause);
     }
     return cause;

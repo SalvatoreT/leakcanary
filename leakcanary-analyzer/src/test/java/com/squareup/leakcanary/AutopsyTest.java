@@ -71,8 +71,11 @@ public class AutopsyTest {
   }
 
   @Before public void setUp() {
-    excludedRefs = new ExcludedRefs.Builder().clazz(WeakReference.class.getName(), true)
-        .clazz("java.lang.ref.FinalizerReference", true);
+    excludedRefs = ExcludedRefs.builder() //
+        .clazz(WeakReference.class.getName()) //
+        .alwaysExclude() //
+        .clazz("java.lang.ref.FinalizerReference") //
+        .alwaysExclude();
   }
 
   @Test public void zombiesFound() {
